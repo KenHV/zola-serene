@@ -52,26 +52,22 @@ body::-webkit-scrollbar {
 
 .prose {
   h1 {
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: bolder;
     margin: 1em 0 0.5em 0;
+    line-height: 1.5;
   }
 
   h2 {
-    font-size: 1.3em;
-    padding-top: 80px;
-    margin-top: -45px;
+    font-size: 1.5em;
   }
 
   h3 {
-    font-size: 1.1em;
-    padding-top: 65px;
-    margin-top: -45px;
+    font-size: 1.3em;
   }
 
   h4 {
-    font-size: 1.05em;
-    margin: 30px 0 15px 0;
+    font-size: 1.1em;
   }
 
   .zola-anchor {
@@ -586,6 +582,7 @@ body.homepage {
     }
 
     #text {
+      align-self: center;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
@@ -719,6 +716,27 @@ header {
     font-size: 1.35em;
     display: flex;
     align-items: center;
+    flex-grow: 1;
+    justify-content: space-between;
+
+    .site-logo {
+      width: 32px;
+      height: auto;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    .nav-info {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-sections {
+      gap: 1em;
+      margin-right: 1em;
+      display: flex;
+      align-items: center;
+    }
 
     a {
       color: var(--text-color);
@@ -916,9 +934,36 @@ body.post {
   }
 
   #blank {
-    order: 1;
+    order: 3;
     position: sticky;
     width: calc((100% - var(--main-max-width)) / 2);
+
+    #back-to-top {
+      z-index: 99;
+      height: 28px;
+      padding: 0;
+      position: fixed;
+      bottom: 1.5em;
+      margin-left: 7em;
+      color: var(--text-pale-color);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      svg {
+        width: 28px;
+        height: 28px;
+      }
+      transform: translateY(-5px) scale(0);
+      transition: transform 0.2s;
+
+      &.shown {
+        transform: translateY(0px) scale(1);
+      }
+
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
   }
 
   main {
@@ -943,13 +988,11 @@ body.post {
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      margin-bottom: 1em;
+      font-size: 0.9em;
     }
 
     #date {
       color: var(--text-pale-color);
-      margin-bottom: 1em;
-
       #publish,
       #updated {
         margin-right: 20px;
@@ -957,7 +1000,6 @@ body.post {
     }
 
     #tags {
-      margin-bottom: 1em;
       display: flex;
       gap: 1em;
       flex-wrap: wrap;
@@ -993,7 +1035,7 @@ body.post {
   }
 
   aside {
-    order: 3;
+    order: 1;
     width: calc((100% - var(--main-max-width)) / 2);
     position: sticky;
     margin-top: 175px;
@@ -1059,33 +1101,6 @@ body.post {
         background-color: var(--primary-color);
       }
     }
-    
-    #back-to-top {
-      z-index: 99;
-      height: 28px;
-      padding: 0;
-      position: fixed;
-      bottom: 1.5em;
-      margin-left: 3em;
-      color: var(--text-pale-color);
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      svg {
-        width: 28px;
-        height: 28px;
-      }
-      transform: translateY(-5px) scale(0);
-      transition: transform 0.2s;
-      
-      &.shown {
-        transform: translateY(0px) scale(1);
-      }
-
-      &:hover {
-        color: var(--primary-color);
-      }
-    }
   }
 
   @media screen and (max-width: 1024px) {
@@ -1101,7 +1116,7 @@ body.post {
       top: 45px;
       margin-top: 0;
       min-width: 275px;
-      height: 100%;
+      height: auto;
       background-color: var(--bg-color);
       box-shadow: rgba(0, 0, 0, 0.08) -2px 8px 8px 0px;
 

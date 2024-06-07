@@ -32,7 +32,14 @@
 {% block content %}
 {% include "_header.html" %}
 <div id="wrapper">
-  <div id="blank"></div>
+  <div id="blank">
+    {% if config.extra.back_to_top %}
+    <button id="back-to-top" aria-label="back to top">
+      {% set icon = load_data(path="static/icon/arrow-up.svg") %}
+      {{ icon | safe }}
+    </button>
+    {% endif %}
+  </div>
   <aside>
     {% if page.extra.toc is defined %}{% set show_toc = page.extra.toc %}{% else %}{% set show_toc = config.extra.toc %}{% endif %}
     {% if show_toc and page.toc %}
@@ -54,12 +61,6 @@
         {% endfor %}
       </ul>
     </nav>
-    {% endif %}
-    {% if config.extra.back_to_top %}
-    <button id="back-to-top" aria-label="back to top">
-      {% set icon = load_data(path="static/icon/arrow-up.svg") %}
-      {{ icon | safe }}
-    </button>
     {% endif %}
   </aside>
   <main>
