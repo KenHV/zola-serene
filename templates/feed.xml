@@ -21,12 +21,9 @@
 		<title>{{ page.title }}</title>
 		<published>{{ page.date | date(format="%+") }}</published>
 		<updated>{{ page.updated | default(value=page.date) | date(format="%+") }}</updated>
-        {%- if page.summary %}
-        <summary>{{ page.summary }}</summary>
-        {%- endif %}
 		<link href="{{ page.permalink | safe }}" type="text/html"/>
 		<id>{{ page.permalink | safe }}</id>
-		<content type="html">{{ page.content }}</content>
+		<description>{{ page.description }}</description>
 	</entry>
 	{%- endfor %}
 </feed>
