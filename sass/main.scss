@@ -8,7 +8,7 @@
 }
 
 body {
-  min-height: 100%;
+  min-height: 100svh;
   font-family: var(--main-font);
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -456,7 +456,7 @@ body.dark .prose {
 body.prose-page {
   main {
     font-size: var(--paragraph-font-size);
-    min-height: 100vh;
+    min-height: 100svh;
     padding-top: 30px;
     margin: 0 auto;
     max-width: var(--main-max-width);
@@ -552,7 +552,7 @@ body.prose-page {
 body.homepage {
   #wrapper {
     width: 100%;
-    min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -912,7 +912,7 @@ body.blog {
   #wrapper {
     margin: 0 auto;
     max-width: var(--main-max-width);
-    min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -972,7 +972,7 @@ body.post {
     margin: 0 auto;
     padding-top: 45px;
     max-width: var(--main-max-width);
-    min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1047,7 +1047,7 @@ body.post {
       padding: 5px 15px 5px 2em;
       min-width: 60%;
       overflow-y: auto;
-      max-height: calc(100vh - 45px - 6em);
+      max-height: calc(100svh - 45px - 6em);
       scrollbar-width: none;
 
       &::-webkit-scrollbar {
@@ -1122,7 +1122,7 @@ body.post {
 
       nav {
         padding: 1em 0.75em;
-        max-height: calc(100vh - 45px);
+        max-height: calc(100svh - 45px);
       }
 
       #back-to-top {
@@ -1147,7 +1147,7 @@ body.tag-list {
   #wrapper {
     margin: 0 auto;
     max-width: var(--main-max-width);
-    min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1193,7 +1193,7 @@ body.tag-single {
   #wrapper {
     margin: 0 auto;
     max-width: var(--main-max-width);
-    min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1228,7 +1228,7 @@ body.projects {
   #wrapper {
     margin: 0 auto;
     max-width: var(--main-max-width);
-    min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1338,7 +1338,7 @@ body.projects {
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 body.not-found {  
-  height: 100vh;
+  height: 100svh;
   height: 100dvh;
   display: flex;
   justify-content: center;
